@@ -5,8 +5,8 @@
 //---------------------------------------------------------------------------
 // DATA TYPES
 
-#define _MMR_f64        	__epi_1xf64
-#define _MMR_f32        	__epi_2xf32
+#define _MMR_f64        	vfloat64m1_t
+#define _MMR_f32        	vfloat32m1_t
 
 #define _MMR_2xf64			__epi_2xf64
 #define _MMR_4xf64			__epi_4xf32
@@ -98,8 +98,8 @@
 //---------------------------------------------------------------------------
 // FLOATING POINT INTRINSICS
 
-#define _MM_LOAD_f64    	__builtin_epi_vload_1xf64
-#define _MM_LOAD_f32    	__builtin_epi_vload_2xf32
+#define _MM_LOAD_f64    	__riscv_vle64_v_f64m1
+#define _MM_LOAD_f32    	__riscv_vle32_v_f32m1
 
 #define _MM_LOAD_INDEX_f64 __builtin_epi_vload_indexed_1xf64
 #define _MM_LOAD_INDEX_f32 __builtin_epi_vload_indexed_2xf32
@@ -107,8 +107,8 @@
 #define _MM_LOAD_STRIDE_f64 __builtin_epi_vload_strided_1xf64
 #define _MM_LOAD_STRIDE_f32 __builtin_epi_vload_strided_2xf32
 
-#define _MM_STORE_f64   	__builtin_epi_vstore_1xf64
-#define _MM_STORE_f32   	__builtin_epi_vstore_2xf32
+#define _MM_STORE_f64   	__riscv_vse64_v_f64m1
+#define _MM_STORE_f32   	__riscv_vse32_v_f32m1
 
 #define _MM_STORE_INDEX_f64 __builtin_epi_vstore_indexed_1xf64
 #define _MM_STORE_INDEX_f32 __builtin_epi_vstore_indexed_2xf32
@@ -140,8 +140,8 @@
 #define _MM_SQRT_f64    	__builtin_epi_vfsqrt_1xf64
 #define _MM_SQRT_f32    	__builtin_epi_vfsqrt_2xf32
 
-#define _MM_SET_f64     	__builtin_epi_vbroadcast_1xf64
-#define _MM_SET_f32     	__builtin_epi_vbroadcast_2xf32
+#define _MM_SET_f64     	__riscv_vfmv_s_f_f64m1
+#define _MM_SET_f32     	__riscv_vfmv_s_f_f32m1
 
 #define _MM_MIN_f64         __builtin_epi_vfmin_1xf64
 #define _MM_MIN_f32         __builtin_epi_vfmin_2xf32
@@ -171,8 +171,8 @@
 #define _MM_REDMIN_f32      __builtin_epi_vfredmin_2xf32
 
 
-#define _MM_MACC_f64  		__builtin_epi_vfmacc_1xf64
-#define _MM_MACC_f32  		__builtin_epi_vfmacc_2xf32
+#define _MM_FMACC_f64  		__riscv_vfmacc_vf_f64m1 // _MM_MACC_f64
+#define _MM_MACC_f32  		__riscv_vfmacc_vf_f32m1 // _MM_MACC_f32
 
 #define _MM_MADD_f64  		__builtin_epi_vfmadd_1xf64
 #define _MM_MADD_f32  		__builtin_epi_vfmadd_2xf32
@@ -306,26 +306,26 @@
 //---------------------------------------------------------------------------
 // ADVANCE RISC-V MATH LIBRARY
 
-#ifndef _MM_LOG
-#define _MM_LOG
-#include "__log.h"
-#define _MM_LOG_f64 		__log_1xf64
-#define _MM_LOG_f32 		__log_2xf32
-#endif
-
-#ifndef _MM_EXP
-#define _MM_EXP
-#include "__exp.h"
-#define _MM_EXP_f64 		__exp_1xf64
-#define _MM_EXP_f32 		__exp_2xf32
-#endif
-
-#ifndef _MM_COS
-#define _MM_COS
-#include "__cos.h"
-#define _MM_COS_f64 		__cos_1xf64
-#define _MM_COS_f32 		__cos_1xf32
-#endif
+//#ifndef _MM_LOG
+//#define _MM_LOG
+//#include "__log.h"
+//#define _MM_LOG_f64 		__log_1xf64
+//#define _MM_LOG_f32 		__log_2xf32
+//#endif
+//
+//#ifndef _MM_EXP
+//#define _MM_EXP
+//#include "__exp.h"
+//#define _MM_EXP_f64 		__exp_1xf64
+//#define _MM_EXP_f32 		__exp_2xf32
+//#endif
+//
+//#ifndef _MM_COS
+//#define _MM_COS
+//#include "__cos.h"
+//#define _MM_COS_f64 		__cos_1xf64
+//#define _MM_COS_f32 		__cos_1xf32
+//#endif
 
 //---------------------------------------------------------------------------
 
