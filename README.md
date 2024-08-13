@@ -8,11 +8,8 @@ The benchmark suite with all its applications and input sets is available as ope
 
 RiVEC implements the lastest riscv intrinsics for rvv-1.0. It can be compiled with the latest [riscv-collab/riscv-gnu-toolchain](https://github.com/riscv-collab/riscv-gnu-toolchain). RiVEC has been successfully tested on Spike RISC-V ISA Simulator and qemu.
 
-There is also an implementation based on the Working draft of the proposed RISC-V V vector extension [v0.7](https://github.com/RALC88/riscv-vectorized-benchmark-suite/tree/rvv-0.7)
+There is also an implementation based on the Working draft of the proposed RISC-V V vector extension v0.7. Click [here](https://github.com/RALC88/riscv-vectorized-benchmark-suite/tree/rvv-0.7).
 
-Vectorized Bencmark Suite for rvv-0.7. Click [here](https://github.com/RALC88/riscv-vectorized-benchmark-suite/tree/rvv-0.7).
-
-Vectorized Bencmark Suite for rvv-1.0. Click [here](https://github.com/RALC88/riscv-vectorized-benchmark-suite/tree/rvv-1.0).
 
 If you use this software or a modified version of it for your research, please cite the paper:
 Cristóbal Ramírez, César Hernandez, Oscar Palomar, Osman Unsal, Marco Ramírez, and Adrián Cristal. 2020. A RISC-V Simulator and Benchmark Suite for Designing and Evaluating Vector Architectures. ACM Trans. Archit. Code Optim. 17, 4, Article 38 (October 2020), 29 pages. https://doi.org/10.1145/3422667
