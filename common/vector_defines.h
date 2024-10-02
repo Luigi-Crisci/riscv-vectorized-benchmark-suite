@@ -60,8 +60,8 @@
 #define _MM_REM_i64       __builtin_epi_vrem_1xi64
 #define _MM_REM_i32       __builtin_epi_vrem_2xi32
 
-#define _MM_SET_i64     	__builtin_epi_vbroadcast_1xi64
-#define _MM_SET_i32     	__builtin_epi_vbroadcast_2xi32
+#define _MM_SET_i64     	__builtin_epi_vmv_v_x_1xi64
+#define _MM_SET_i32     	__builtin_epi_vmv_v_x_2xi32
 
 #define _MM_MIN_i64         __builtin_epi_vmin_1xi64
 #define _MM_MIN_i32         __builtin_epi_vmin_2xi32
@@ -140,8 +140,10 @@
 #define _MM_SQRT_f64    	__builtin_epi_vfsqrt_1xf64
 #define _MM_SQRT_f32    	__builtin_epi_vfsqrt_2xf32
 
-#define _MM_SET_f64     	__builtin_epi_vbroadcast_1xf64
-#define _MM_SET_f32     	__builtin_epi_vbroadcast_2xf32
+// #define _MM_SET_f64     	__builtin_epi_vbroadcast_1xf64
+#define _MM_SET_f64 __builtin_epi_vfmv_v_f_1xf64 // LLVM-EPI 1.0
+// #define _MM_SET_f32     	__builtin_epi_vbroadcast_2xf32
+#define _MM_SET_f32     	__builtin_epi_vfmv_v_f_2xf32 //LLVM-EPI 1.0
 
 #define _MM_MIN_f64         __builtin_epi_vfmin_1xf64
 #define _MM_MIN_f32         __builtin_epi_vfmin_2xf32
@@ -320,12 +322,12 @@
 #define _MM_EXP_f32 		__exp_2xf32
 #endif
 
-#ifndef _MM_COS
-#define _MM_COS
-#include "__cos.h"
-#define _MM_COS_f64 		__cos_1xf64
-#define _MM_COS_f32 		__cos_1xf32
-#endif
+// #ifndef _MM_COS
+// #define _MM_COS
+// #include "__cos.h"
+// #define _MM_COS_f64 		__cos_1xf64
+// #define _MM_COS_f32 		__cos_1xf32
+// #endif
 
 //---------------------------------------------------------------------------
 

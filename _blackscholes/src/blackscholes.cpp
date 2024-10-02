@@ -18,6 +18,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include <string.h>
+#include <errno.h>
 
 #include "../../common/riscv_util.h"
 
@@ -558,8 +559,10 @@ int main (int argc, char **argv)
 
     //Read input data from file
     file = fopen(inputFile, "r");
+    printf("Input file: %s\n", inputFile);
     if(file == NULL) {
       printf("ERROR: Unable to open file `%s'.\n", inputFile);
+      printf("Errno value: %d\n", errno);
       exit(1);
     }
     rv = fscanf(file, "%i", &numOptions);

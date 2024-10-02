@@ -16,6 +16,7 @@ vector:
 	echo "vector"
 	${LLVM}/bin/clang --target=riscv64-unknown-elf -march=rv64g  -O2 -c -o src/utils.o src/utils.c
 	${LLVM}/bin/clang --target=riscv64-unknown-elf -march=rv64g -mepi -DUSE_RISCV_VECTOR -fno-vectorize -O2 -c -o src/axpy.o src/axpy.c
+	${LLVM}/bin/clang --target=riscv64-unknown-elf -march=rv64g -mepi -DUSE_RISCV_VECTOR -fno-vectorize -O2 -S -o src/axpy.s src/axpy.c
 	${LLVM}/bin/clang --target=riscv64-unknown-elf -march=rv64g  -O2 -c -o src/main.o src/main.c
 	${LLVM}/bin/clang --target=riscv64-unknown-elf -march=rv64g  -O2 -o bin/axpy_vector.exe src/*.o -lm
 	rm src/*.o
